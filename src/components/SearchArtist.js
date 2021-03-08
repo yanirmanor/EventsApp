@@ -84,7 +84,7 @@ export default function SearchArtist() {
   const [searchTerm, setSearchTerm] = useState("");
   const [query, setSearchQuery] = useState("");
   const [onSearch$] = useState(() => new Subject());
-  const { loadFromStorage, list } = useProxy(favorite);
+  const { loadFromStorage } = useProxy(favorite);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);

@@ -2,17 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import useArtist from "../hooks/useArtist";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  media: {
-    maxHeight: 250,
-  },
-}));
-
 export default function Artist({ artist }) {
-  const classes = useStyles();
   const { data, error, isLoading, isError } = useArtist(artist);
 
   if (isLoading) {

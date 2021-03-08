@@ -12,7 +12,6 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
-import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 const useStyles = makeStyles((theme) => ({
   favoriteBtn: {
