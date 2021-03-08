@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { debounceTime, filter, distinctUntilChanged } from "rxjs/operators";
 import { Subject } from "rxjs";
-import { useProxy } from "valtio";
+import { useSnapshot } from "valtio";
 import { favorite } from "../Store";
 
 import AppBar from "@material-ui/core/AppBar";
@@ -83,7 +83,7 @@ export default function SearchArtist() {
   const [searchTerm, setSearchTerm] = useState("");
   const [query, setSearchQuery] = useState("");
   const [onSearch$] = useState(() => new Subject());
-  const { loadFromStorage } = useProxy(favorite);
+  const { loadFromStorage } = useSnapshot(favorite);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);

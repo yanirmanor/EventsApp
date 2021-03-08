@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useProxy } from "valtio";
+import { useSnapshot } from "valtio";
 import { favorite } from "../Store";
 import useArtistEvents from "../hooks/useArtistEvents";
 import { makeStyles } from "@material-ui/core/styles";
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ArtistEvents({ artist }) {
   const classes = useStyles();
   const { data, error, isLoading, isError } = useArtistEvents(artist);
-  const { addItem, removeItem } = useProxy(favorite);
+  const { addItem, removeItem } = useSnapshot(favorite);
   const [expanded, setExpanded] = useState({});
 
   const handleExpandClick = (id) => {

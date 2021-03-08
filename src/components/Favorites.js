@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useProxy } from "valtio";
+import { useSnapshot } from "valtio";
 import { favorite } from "../Store";
 
 import Button from "@material-ui/core/Button";
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Favorites() {
   const classes = useStyles();
-  const { list, removeItem } = useProxy(favorite);
+  const { list, removeItem } = useSnapshot(favorite);
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
